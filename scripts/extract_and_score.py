@@ -35,7 +35,7 @@ jobId_ef = str(result_ef['jobExecution']['runId'])
 print(jobId_ef)
 
 status_ef = str(result_ef['jobExecution']['result'])
-print (status_ef)
+print(status_ef)
 
 body_sc = {}
 
