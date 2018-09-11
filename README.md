@@ -14,7 +14,7 @@ The goal of this code pattern is to demonstrate the key integration points that 
 
 > **What is the IBM Deployment Manager?** The Deployment Manager is a DSX Local tool that provides users the ability to create and train machine learning models. Users can also deploy their models to make them available to a wider audience.
 
-This repo contains two Jupyter notebooks illustrating how to use Spark for training and scoring a model built on a [wine classification data set](https://www.kaggle.com/brynja/wineuci). The data cotains a list of wines with their associated chemical features and assigned wine classification.
+This repo contains two Jupyter notebooks illustrating how to use Spark for training and scoring a model built on a [wine classification data set](https://www.kaggle.com/brynja/wineuci). The data contains a list of wines with their associated chemical features and assigned wine classification.
 
 The first notebook uses various machine learning techniques to reduce the number of features required to accurately classify any particular wine.
 
