@@ -25,14 +25,14 @@ extract_features = requests.post(url=url_ef,
                                  verify=False)
 
 response_ef = extract_features.json()
-print (response_ef)
+print(response_ef)
 
 # Check the status of the extract features request
 
 result_ef = response_ef["result"]
 
 jobId_ef = str(result_ef['jobExecution']['runId'])
-print (jobId_ef)
+print(jobId_ef)
 
 status_ef = str(result_ef['jobExecution']['result'])
 print (status_ef)
@@ -51,12 +51,12 @@ while status_ef == 'Waiting' or \
                                   verify=False)
 
     response_sc1 = status_check1.json()
-    print (response_sc1)
+    print(response_sc1)
 
     result_sc1 = response_sc1["result"]
 
     status_ef = str(result_sc1["result"][0]["result"])
-    print (status_ef)
+    print(status_ef)
 
     time.sleep(3)
 
@@ -72,9 +72,9 @@ if status_ef == 'Succeeded':
                                   verify=False)
 
     response_ms = model_scoring.json()
-    print (response_ms)
+    print(response_ms)
 else:
-    print ("Job Failed: feature status=" + status_ef)
+    print("Job Failed: feature status=" + status_ef)
 
 
 # Check the status of the model scoring request
@@ -82,10 +82,10 @@ else:
 result_ms = response_ms["result"]
 
 jobId_ms = str(result_ms['jobExecution']['runId'])
-print (jobId_ms)
+print(jobId_ms)
 
 status_ms = str(result_ms['jobExecution']['result'])
-print (status_ms)
+print(status_ms)
 
 url_sc2 = MODEL_SCORING_ENDPOINT + '/status/' + jobId_ms
 
@@ -99,18 +99,18 @@ while status_ms == 'Waiting' or \
                                   verify=False)
 
     response_sc2 = status_check2.json()
-    print (response_sc2)
+    print(response_sc2)
 
     result_sc2 = response_sc2["result"]
 
     status_ms = str(result_sc2["result"][0]["result"])
-    print (status_ms)
+    print(status_ms)
 
     time.sleep(3)
 
 # Final if check to verify the job completion
 
 if status_ms == 'Succeeded':
-    print ("Job Complete")
+    print("Job Complete")
 else:
-    print ("Job Failed: scoring status=" + status_ms)
+    print("Job Failed: scoring status=" + status_ms)
